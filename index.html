@@ -9,17 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0A0A0C;
-    --panel: #131316;
-    --panel-2: #1B1B1F;
-    --teal: #C6A664;
-    --teal-soft: #D9C79A;
-    --gold: #C6A664;
-    --brick: #6E2A28;
+    --ink: #FFFFFF;
+    --panel: #ECF3FB;
+    --panel-2: #FFFFFF;
+    --teal: #4FAFB0;
+    --teal-soft: #4FAFB0;
+    --gold: #2F6EBD;
+    --navy: #173C66;
+    --brick: #2F6EBD;
     --paper: #F4F1E8;
-    --ivory: #EDEAE2;
-    --muted: #9B9894;
-    --line: rgba(198,166,100,0.22);
+    --ivory: #22303D;
+    --muted: #66788A;
+    --line: #DCE7F2;
+    --lightbg: #E4EFF9;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -39,12 +41,12 @@
   }
   a { color: inherit; }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
-  .ru { font-family: 'Noto Serif', serif; font-style: italic; color: var(--teal-soft); font-weight: 400; }
+  .ru { font-family: 'Noto Serif', serif; font-style: italic; color: var(--teal); font-weight: 500; }
 
   /* NAV */
   nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(10,10,12,0.92);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
   }
@@ -58,39 +60,39 @@
   .hero {
     position: relative;
     overflow: hidden;
-    padding: 108px 0 96px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 132px 0 110px 0;
+    background: linear-gradient(162deg, #E4EFF9 0% 28%, #2F6EBD 28% 33%, #173C66 33% 100%);
   }
   .hero .bird-bg {
-    position: absolute; right: -180px; top: -120px;
-    width: 780px; opacity: 0.10; pointer-events: none;
+    position: absolute; right: -140px; bottom: -80px;
+    width: 620px; opacity: 0.14; pointer-events: none;
   }
   .hero .eyebrow {
-    color: var(--gold); font-size: 13px; letter-spacing: 3px; margin-bottom: 22px;
+    color: #A9C8E8; font-size: 13px; letter-spacing: 3px; margin-bottom: 22px;
   }
   .hero h1 {
     font-size: 42px; line-height: 1.45; margin: 0 0 20px 0; color: #fff;
     max-width: 720px;
   }
-  .hero .ru-line { font-size: 16px; margin: 0 0 30px 0; }
+  .hero .ru-line { font-size: 16px; margin: 0 0 30px 0; color: #A9C8E8 !important; }
   .hero p.lede {
-    max-width: 560px; font-size: 16px; color: var(--muted); margin: 0 0 40px 0;
+    max-width: 560px; font-size: 16px; color: #C7DCF0; margin: 0 0 40px 0;
   }
   .hero .cta-row { display: flex; gap: 18px; flex-wrap: wrap; }
   .btn {
     display: inline-block; padding: 13px 30px; border-radius: 2px;
     font-size: 14px; letter-spacing: 1px; text-decoration: none;
-    border: 1px solid var(--gold); color: var(--gold); transition: all .25s;
+    border: 1px solid #fff; color: #fff; transition: all .25s;
   }
-  .btn.solid { background: var(--gold); color: var(--ink); font-weight: 600; }
-  .btn:hover { background: var(--gold); color: var(--ink); }
+  .btn.solid { background: var(--teal); border-color: var(--teal); color: #fff; font-weight: 600; }
+  .btn:hover { background: #fff; color: var(--navy); }
 
   section { padding: 84px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
   .kicker {
-    font-size: 13px; letter-spacing: 2px; color: var(--teal-soft); margin-bottom: 10px;
+    font-size: 13px; letter-spacing: 2px; color: var(--teal); margin-bottom: 10px; font-weight: 600;
   }
-  h2.section-title { font-size: 30px; color: #fff; margin: 0 0 8px 0; }
+  h2.section-title { font-size: 30px; color: var(--navy); margin: 0 0 8px 0; }
   .section-ru { font-size: 14px; margin-bottom: 44px; }
 
   /* ABOUT */
@@ -100,7 +102,7 @@
   .about-grid .line {
     border-left: 2px solid var(--gold); padding-left: 18px;
   }
-  .about-grid .line h3 { font-size: 15px; color: var(--gold); margin: 0 0 4px 0; }
+  .about-grid .line h3 { font-size: 15px; color: var(--navy); margin: 0 0 4px 0; }
   .about-grid .line span { font-size: 14px; color: var(--muted); }
 
   /* SHAREHOLDERS */
@@ -108,8 +110,8 @@
   .share-card {
     background: var(--panel); border: 1px solid var(--line); padding: 34px 30px;
   }
-  .share-card .tag { color: var(--teal-soft); font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; display: block;}
-  .share-card h3 { font-size: 19px; color: #fff; margin: 0 0 14px 0; }
+  .share-card .tag { color: var(--teal); font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; display: block; font-weight: 600;}
+  .share-card h3 { font-size: 19px; color: var(--navy); margin: 0 0 14px 0; }
   .share-card p { font-size: 14.5px; color: var(--muted); margin: 0 0 12px 0; }
   .share-note {
     margin-top: 26px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line);
@@ -126,7 +128,7 @@
   }
   .network-band .stat:last-child { border-right: none; }
   .network-band .stat .num {
-    font-family: 'Noto Serif SC', serif; font-size: 34px; color: var(--gold); display: block; margin-bottom: 8px;
+    font-family: 'Noto Serif SC', serif; font-size: 34px; color: var(--gold); display: block; margin-bottom: 8px; font-weight: 700;
   }
   .network-band .stat .label { font-size: 13px; color: var(--muted); line-height: 1.6; }
   .network-note { font-size: 13px; color: var(--muted); text-align: center; }
@@ -134,7 +136,7 @@
     display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 26px 0 0 0;
   }
   .location-strip span {
-    font-size: 12.5px; color: var(--teal-soft); border: 1px solid var(--line);
+    font-size: 12.5px; color: var(--navy); border: 1px solid var(--line); background: var(--panel);
     padding: 6px 16px; letter-spacing: 1px;
   }
 
@@ -152,37 +154,38 @@
   }
   .service-row:last-child { border-bottom: 1px solid var(--line); }
   .service-row .num {
-    font-family: 'Noto Serif SC', serif; font-size: 34px; color: var(--gold); opacity: 0.85;
+    font-family: 'Noto Serif SC', serif; font-size: 34px; color: var(--teal); opacity: 0.9;
   }
-  .service-row h3 { font-size: 17px; color: #fff; margin: 0 0 8px 0; font-family: 'Noto Sans SC'; font-weight: 500; }
+  .service-row h3 { font-size: 17px; color: var(--navy); margin: 0 0 8px 0; font-family: 'Noto Sans SC'; font-weight: 600; }
   .service-row p { font-size: 14.5px; color: var(--muted); margin: 0; max-width: 640px; }
 
   /* CASE */
   .case-block {
-    background: var(--panel-2); border-left: 3px solid var(--brick);
+    background: var(--panel); border-left: 3px solid var(--gold);
     padding: 40px 38px;
   }
-  .case-block .tag { color: #E0A79F; font-size: 12px; letter-spacing: 2px; }
-  .case-block h3 { font-size: 20px; color: #fff; margin: 14px 0 16px 0; }
+  .case-block .tag { color: var(--gold); font-size: 12px; letter-spacing: 2px; font-weight: 600; }
+  .case-block h3 { font-size: 20px; color: var(--navy); margin: 14px 0 16px 0; }
   .case-block p { font-size: 15px; color: var(--ivory); margin: 0 0 14px 0; }
   .case-block .fine { font-size: 12.5px; color: var(--muted); margin-top: 20px; }
 
   /* BOUNDARY manifesto */
   .manifesto {
-    text-align: center; max-width: 680px; margin: 0 auto;
+    text-align: center; max-width: 680px; margin: 0 auto; color: #fff;
   }
-  .manifesto .mark { font-size: 44px; color: var(--gold); font-family: 'Noto Serif SC'; line-height: 1; }
-  .manifesto p { font-size: 17px; color: var(--ivory); margin: 26px 0; }
-  .manifesto .signoff { color: var(--gold); font-size: 15px; letter-spacing: 2px; margin-top: 30px; }
+  .manifesto .mark { font-size: 44px; color: var(--teal); font-family: 'Noto Serif SC'; line-height: 1; }
+  .manifesto p { font-size: 17px; color: #E4EFF9; margin: 26px 0; }
+  .manifesto .signoff { color: #fff; font-size: 15px; letter-spacing: 2px; margin-top: 30px; }
+  #boundary { background: var(--navy); }
 
   /* CONTACT / FOOTER */
   footer { padding: 0 0 46px 0; }
   .brand-statement {
     text-align: center; padding: 64px 24px 56px 24px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line); background: var(--panel);
   }
   .brand-statement .cn {
-    font-family: 'Noto Serif SC', serif; font-size: 32px; color: var(--gold);
+    font-family: 'Noto Serif SC', serif; font-size: 32px; color: var(--navy);
     letter-spacing: 6px; margin: 0 0 10px 0; font-weight: 700;
   }
   .brand-statement .en {
@@ -193,22 +196,22 @@
     max-width: 560px; margin: 34px auto 0 auto; font-size: 12.5px; color: var(--muted);
     line-height: 1.9; border-top: 1px solid var(--line); padding-top: 24px;
   }
-  .brand-statement .logo-story b { color: var(--gold); font-weight: 500; }
+  .brand-statement .logo-story b { color: var(--navy); font-weight: 600; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
-  .contact-grid h3 { font-size: 13px; letter-spacing: 2px; color: var(--gold); margin: 0 0 14px 0; }
+  .contact-grid h3 { font-size: 13px; letter-spacing: 2px; color: var(--gold); margin: 0 0 14px 0; font-weight: 600; }
   .contact-grid p { font-size: 14.5px; color: var(--muted); margin: 0 0 6px 0; }
   .foot-bottom {
     display: flex; justify-content: space-between; align-items: center;
     border-top: 1px solid var(--line); padding-top: 26px; flex-wrap: wrap; gap: 16px;
   }
-  .foot-bottom img { height: 24px; opacity: 0.85; }
+  .foot-bottom img { height: 24px; opacity: 0.9; }
   .foot-bottom .credo { font-size: 13px; color: var(--muted); letter-spacing: 1px; }
 
   @media (max-width: 780px) {
     .about-grid, .share-grid, .contact-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 30px; }
     nav .links { display: none; }
-    .hero .bird-bg { width: 480px; right: -160px; }
+    .hero .bird-bg { width: 380px; right: -120px; }
     section { padding: 56px 0; }
   }
 </style>
@@ -397,6 +400,7 @@
   <div class="brand-statement">
     <p class="cn">向西而行，助企成就。</p>
     <p class="en">On the way west, we help enterprises succeed.</p>
+    <p class="logo-story" style="max-width:640px;margin:26px auto 0 auto;font-size:13px;color:var(--ivory);line-height:1.85;border-top:none;padding-top:0;">上述服务与资源并非彼此独立，而是一条完整链路——从资金出海、当地落地，到经营资金归集、收益回国。两仪跨境与深圳西就的资源、经验及牌照资质，是这条链路得以走通的基础，也是难以简单复制的部分。</p>
     <p class="logo-story">关于LOGO：那只"鸟"，骨架取自甲骨文<b>"西"</b>字的字形，造型原型是上古传说里的玄鸟——"天命玄鸟，降而生商"，玄鸟本就是商代的图腾，跟商贸、开拓天生有缘分；甲骨文"西"字，本意正是飞鸟归巢——就像中资企业扎根在这里，持续经营，向西而行，成就归于东方。红金配色，取的是丝绸之路的意象。</p>
   </div>
   <div class="wrap">
