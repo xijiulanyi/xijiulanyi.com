@@ -71,7 +71,7 @@
   a:focus-visible, button:focus-visible { outline: 2px solid var(--teal-deep); outline-offset: 3px; border-radius: 4px; }
   .skip-link { position: absolute; left: -9999px; top: 0; background: var(--navy); color: #fff; padding: 8px 18px; border-radius: 0 0 8px 0; z-index: 100; }
   .skip-link:focus { left: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 62px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
   body {
     margin: 0;
     background: var(--ink);
@@ -101,7 +101,7 @@
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; max-width: 1200px; }
   nav .brand { display: flex; align-items: center; gap: 10px; }
   nav .brand img { height: 34px; width: auto; }
   nav .brand span { font-family: 'Noto Serif SC', serif; font-weight: 600; color: var(--navy); font-size: .98rem; letter-spacing: .06em; }
@@ -305,7 +305,7 @@
 <nav aria-label="主导航">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="西就两仪 首页">
-      <img src="assets/logo.png" alt="西就两仪 LOGO" width="119" height="40">
+      <img src="assets/logo.png" alt="西就两仪 LOGO" width="158" height="53">
       <span translate="no">西就两仪</span>
     </a>
     <button id="menuBtn" aria-label="打开菜单" aria-expanded="false">
