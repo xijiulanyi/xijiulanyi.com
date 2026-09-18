@@ -50,20 +50,20 @@
   :root {
     color-scheme: light;
     --ink: #FFFFFF;
-    --panel: #ECF3FB;
+    --panel: #E3EEF9;
     --panel-2: #FFFFFF;
-    --teal: #4FAFB0;
+    --teal: #3E9FA0;
     --teal-deep: #2F6EBD;
-    --navy: #173C66;
-    --blue: #2F6EBD;
-    --blue-soft: #E4EFF9;
+    --navy: #122E52;
+    --blue: #275FA8;
+    --blue-soft: #D9E8F6;
     --paper: #F4F1E8;
     --ivory: #22303D;
-    --muted: #66788A;
-    --line: #DCE7F2;
-    --lightbg: #E4EFF9;
+    --muted: #54687C;
+    --line: #C6D6E8;
+    --lightbg: #D9E8F6;
     --radius: 12px;
-    --shadow: 0 4px 18px rgba(23,60,102,.07);
+    --shadow: 0 4px 18px rgba(18,46,82,.10);
     --shadow-hover: 0 10px 26px rgba(23,60,102,.13);
   }
   * { box-sizing: border-box; }
@@ -131,8 +131,14 @@
     border-bottom: 1px solid var(--line);
   }
   .hero .bird-bg {
-    position: absolute; right: -120px; top: 50%; transform: translateY(-50%);
-    width: 460px; opacity: .14; pointer-events: none; user-select: none;
+    position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+    width: 360px; opacity: .5; pointer-events: none; user-select: none;
+  }
+  @media (max-width: 860px) {
+    .hero .bird-bg { width: 200px; right: -40px; top: auto; bottom: -30px; transform: none; opacity: .12; }
+  }
+  @media (max-width: 860px) {
+    .hero .bird-bg { width: 200px; right: -40px; top: auto; bottom: -30px; transform: none; opacity: .12; }
   }
   .hero .wrap { position: relative; padding: 32px 22px 34px; }
   .hero .company { color: var(--blue); font-weight: 500; letter-spacing: .1em; font-size: .88rem; margin: 0 0 10px; }
@@ -299,7 +305,7 @@
 <nav aria-label="主导航">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="西就两仪 首页">
-      <img src="assets/logo.png" alt="西就两仪 LOGO" width="101" height="34">
+      <img src="assets/logo.png" alt="西就两仪 LOGO" width="119" height="40">
       <span translate="no">西就两仪</span>
     </a>
     <button id="menuBtn" aria-label="打开菜单" aria-expanded="false">
