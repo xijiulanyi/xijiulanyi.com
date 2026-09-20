@@ -277,6 +277,16 @@
   .contact-card p { margin: 2px 0; font-size: .87rem; }
   .contact-card .label { color: var(--muted); margin-right: 2px; }
   @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
+  .gzh-box {
+    margin-top: 12px; display: flex; gap: 18px; align-items: center;
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 12px 18px; box-shadow: var(--shadow);
+  }
+  .gzh-box img { width: 110px; height: 110px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .gzh-box h3 { font-size: 1rem; margin-bottom: 2px; }
+  .gzh-box p { margin: 2px 0; color: var(--muted); font-size: .87rem; }
+  .gzh-box .gzh-note { font-size: .8rem; color: var(--muted); }
+  @media (max-width: 560px) { .gzh-box { flex-direction: row; } .gzh-box img { width: 96px; height: 96px; } }
 
   footer { background: var(--navy); color: rgba(255,255,255,.72); padding: 16px 0; text-align: center; font-size: .84rem; }
   footer .foot-logo { width: 130px; margin-bottom: 8px; opacity: .95; }
@@ -351,7 +361,7 @@
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p>西就两仪有限公司于2026年8月在哈萨克斯坦阿拉木图注册成立，主要服务在哈中资企业及开展中哈业务的当地企业，覆盖连锁经营、贸易、制造和工程等场景。</p>
+        <p>西就两仪有限公司于2026年8月21日在哈萨克斯坦阿拉木图注册成立，主要服务在哈中资企业及开展中哈业务的当地企业，覆盖连锁经营、贸易、制造和工程等场景。</p>
         <p>我们围绕资金如何进入、本地如何归集、如何跨境往来及收益回国等实际问题，衔接投资架构、贸易安排、专业机构和财税服务，协助客户形成清晰、可执行的方案。</p>
       </div>
       <div class="about-cards reveal">
@@ -374,7 +384,7 @@
       <div class="share-card reveal">
         <span class="tag">西就跨境 · 跨境资金</span>
         <h3>深圳市西就跨境信息技术有限公司</h3>
-        <p>聚焦企业跨境资金需求，提供方案咨询、技术对接及落地协助。依托股东深圳市数美信息科技有限公司在跨境支付、金融科技方面的能力，以及其香港相关主体持有的MSO（金钱服务经营者）牌照资源，为客户进行跨境资金路径设计及持牌机构对接。西就跨境的股东中诚联华投资(海南)有限公司（以下简称"中诚联华"），已投资哈萨克斯坦中翰咨询有限公司；中翰咨询背靠北京中翰税务集团（全国AAAAA级税务师事务所，2024年全国排名第14位）的资源，在当地以投融资为主。西就跨境背靠这条资源，为客户提供跨境税务及交易安排等专业属地化服务，具体业务在国内签约办理。</p>
+        <p>聚焦企业跨境资金需求，提供方案咨询、技术对接及落地协助。依托股东深圳市数美信息科技有限公司在跨境支付、金融科技方面的能力，以及其香港相关主体持有的MSO（金钱服务经营者）牌照资源，为客户进行跨境资金路径设计及持牌机构对接。西就跨境的股东中诚联华投资(海南)有限公司（以下简称"中诚联华"），已投资哈萨克斯坦中翰咨询有限公司；中翰咨询背靠北京中翰税务集团（全国5A级税务师事务所）的资源，在当地以投融资为主。西就跨境背靠这条资源，为客户提供跨境税务及交易安排等专业属地化服务，具体业务在国内签约办理。</p>
       </div>
       <div class="share-card reveal">
         <span class="tag">两仪跨境 · 投资架构</span>
@@ -388,7 +398,7 @@
       <div class="stat"><b>2015</b><span>两仪团队成立年份</span></div>
       <div class="stat"><b>10+</b><span>境内设有子公司的城市</span></div>
       <div class="stat"><b>5</b><span>境外设有子公司的国家/地区</span></div>
-      <div class="stat"><b class="long">相关香港主体持牌资源：MSO / TCSP</b></div>
+      <div class="stat"><b class="long">香港持牌资源支持：MSO / TCSP</b></div>
     </div>
     <p class="stats-note">数据为两仪体系整体网络情况，不代表西就两仪独立设立或运营相应机构。</p>
     <div class="geo reveal">
@@ -458,7 +468,7 @@
       <img src="assets/bird.png" alt="西就跨境玄鸟：甲骨文"西"与玄鸟图腾融合的飞鸟" width="1600" height="1600" loading="lazy">
       <span class="mark-text"><span class="zh">向西而行，助企成就。</span><span class="en">On the way west, we help enterprises succeed.</span></span>
     </h2>
-    <p>上述服务与资源并非彼此独立，而是一条完整链路——从资金出海、当地落地，到经营资金归集、收益回国。两仪跨境与西就跨境的资源、经验及牌照资质，是这条链路得以走通的基础，也是难以简单复制的部分。西就两仪常年扎根哈萨克斯坦本地，负责统筹协调各方资源，确保方案真正落地执行。</p>
+    <p>上述服务与资源并非彼此独立，而是一条完整链路——从资金出海、当地落地，到经营资金归集、收益回国。西就跨境与两仪跨境的专业资源、项目经验，以及相关香港持牌机构的服务支持，共同支撑从方案规划到属地落地的服务。西就两仪常年扎根哈萨克斯坦本地，负责统筹协调各方资源，确保方案真正落地执行。</p>
     <p><strong>关于LOGO：</strong>这只飞鸟，有两大创作灵感。其一取自甲骨文"西"字的字形；其二取材于商朝的图腾玄鸟，源于名句"天命玄鸟，降而生商"。我们将甲骨文"西"的形态，和玄鸟的神韵相融，造就了"西就跨境"的LOGO，也承载着企业的文化精神。两层寓意：向西，是砥砺苦行，是探索，是开拓掘进；五彩玄鸟，向东而归，是五彩斑斓的景象，象征圆满成就、天命所归。</p>
   </div>
 </section>
@@ -486,8 +496,17 @@
       <div class="contact-card reveal multi">
         <h3>邮件与地址</h3>
         <p class="role">ТОО "Xijiu Lanyi"</p>
-        <p><a href="mailto:xijiuldf@gmail.com">xijiuldf@gmail.com</a></p>
+        <p><span class="label">邮箱</span><a href="mailto:xijiuldf@gmail.com">xijiuldf@gmail.com</a></p>
         <p>阿拉木图市阿尔马雷区穆拉特巴耶夫街136号</p>
+        <p><span class="label">BIN</span><span translate="no">260840025690</span></p>
+      </div>
+    </div>
+    <div class="gzh-box reveal">
+      <img src="assets/wechat-qr.png" alt="西就跨境微信公众号二维码" width="110" height="110">
+      <div>
+        <h3>官方公众号：西就跨境</h3>
+        <p>关注公众号，了解中哈投资与经营实务</p>
+        <p class="gzh-note">微信搜索“西就跨境”，或扫描二维码关注（公众号为官方发布渠道，与上方两位联系人个人微信不同）</p>
       </div>
     </div>
   </div>
