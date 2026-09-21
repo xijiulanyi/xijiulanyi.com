@@ -103,7 +103,7 @@
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; max-width: 1200px; }
   nav .brand { display: flex; align-items: center; gap: 10px; }
-  nav .brand img { height: 34px; width: auto; }
+  nav .brand img { height: 40px; width: 40px; }
   nav .brand span { font-family: 'Noto Serif SC', serif; font-weight: 600; color: var(--navy); font-size: .98rem; letter-spacing: .06em; }
   nav .links { display: flex; gap: 22px; }
   nav .links a { color: var(--ivory); font-size: .9rem; font-weight: 400; padding: 3px 0; border-bottom: 2px solid transparent; transition: border-color .2s, color .2s; }
@@ -240,6 +240,12 @@
   .case-box p { font-size: .93rem; }
   .case-box .insight { color: var(--navy); font-weight: 400; }
   .case-box .caveat { color: var(--muted); font-size: .82rem; margin-top: 10px; }
+  .case-box .case-img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin-top: 12px; cursor: zoom-in; }
+
+  /* Lightbox：案例图点击放大 */
+  #lightbox { position: fixed; inset: 0; background: rgba(18,46,82,.92); display: none; align-items: center; justify-content: center; z-index: 200; padding: 16px; cursor: zoom-out; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,.4); }
 
   /* Boundary / Compliance */
   .boundary { background: linear-gradient(160deg, var(--navy), #0F2C4C); color: rgba(255,255,255,.86); }
@@ -320,7 +326,7 @@
 <nav aria-label="主导航">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="西就两仪 首页">
-      <img src="assets/logo.png" alt="西就两仪 LOGO" width="158" height="53">
+      <img src="assets/bird-nav.png" alt="西就两仪玄鸟图标" width="96" height="96">
       <span translate="no">西就两仪</span>
     </a>
     <button id="menuBtn" aria-label="打开菜单" aria-expanded="false">
@@ -384,12 +390,13 @@
       <div class="share-card reveal">
         <span class="tag">西就跨境 · 跨境资金</span>
         <h3>深圳市西就跨境信息技术有限公司</h3>
-        <p>聚焦企业跨境资金需求，提供方案咨询、技术对接及落地协助。依托股东深圳市数美信息科技有限公司在跨境支付、金融科技方面的能力，以及其香港相关主体持有的MSO（金钱服务经营者）牌照资源，为客户进行跨境资金路径设计及持牌机构对接。西就跨境的股东中诚联华投资(海南)有限公司（以下简称"中诚联华"），已投资哈萨克斯坦中翰咨询有限公司；中翰咨询背靠北京中翰税务集团（全国5A级税务师事务所）的资源，在当地以投融资为主。西就跨境背靠这条资源，为客户提供跨境税务及交易安排等专业属地化服务。</p>
+        <p>深圳市西就跨境信息技术有限公司（以下简称"西就跨境"）聚焦企业跨境资金需求，提供方案咨询、技术对接及落地协助。依托股东深圳市数美信息科技有限公司在跨境支付、金融科技方面的能力，以及其香港相关主体持有的MSO（金钱服务经营者）牌照资源，为客户进行跨境资金路径设计及持牌机构对接。西就跨境的股东中诚联华投资(海南)有限公司（以下简称"中诚联华"），已投资哈萨克斯坦中翰咨询有限公司；中翰咨询背靠北京中翰税务集团（全国5A级税务师事务所）的资源，在当地以投融资为主。西就跨境背靠这条资源，为客户提供跨境税务及交易安排等专业属地化服务。</p>
       </div>
       <div class="share-card reveal">
         <span class="tag">两仪跨境 · 投资架构</span>
         <h3>深圳前海两仪跨境投资有限公司</h3>
-        <p>两仪体系核心业务板块，团队始于2015年，长期从事境外投资、外商投资、跨境架构及项目落地服务。依托香港信托或公司服务提供者牌照（TCSP）相关资源，形成从境内规划到境外落地的专业服务能力。</p>
+        <p>深圳前海两仪跨境投资有限公司（以下简称"两仪跨境"）是两仪体系的核心业务板块，团队始于2015年，长期从事境外投资、外商投资、跨境架构及项目落地服务。</p>
+        <p>依托两仪体系的香港信托或公司服务提供者牌照（TCSP）资源，以及跨境投资、融资和并购项目经验，两仪跨境为企业提供主体布局、投资路径规划及相关手续服务。双方合作中，由两仪跨境负责ODI等专业交付事项，西就跨境负责合规架构设计、资金链路规划及全流程协调，衔接投资手续与实际业务落地。</p>
       </div>
     </div>
     <div class="compliance-note reveal">相关金融牌照归属于相应持牌主体，并不属于西就跨境或西就两仪。我们负责需求分析、方案设计、资源衔接和项目协调；依法需要持牌开展的业务，由相应持牌机构独立完成。</div>
@@ -411,14 +418,14 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Services · 服务板块</p>
-      <h2>围绕企业进入哈萨克斯坦后的实际需求</h2>
+      <h2>围绕企业在哈萨克斯坦投资与经营的实际需求</h2>
       <span class="ru">Шесть направлений услуг</span>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal"><span class="num">一</span><h3>跨境资金方案</h3><p>围绕投资资金出境、本地经营资金安排、境内外双向资金往来及收益回流等需求，提供路径规划、资料梳理、机构对接与落地协助。</p></div>
       <div class="svc-card reveal"><span class="num">二</span><h3>跨境投资架构</h3><p>围绕ODI、FDI、返程投资等场景提供架构设计和相关手续协助，具体审批、登记以商务部、发改委、外汇局等相关部门的备案或核准结果为准。</p></div>
       <div class="svc-card reveal"><span class="num">三</span><h3>本地资金归集与支付系统</h3><p>针对连锁经营、多门店及多主体企业，协助对接当地银行及持牌支付机构，包括商户接入、费率方案协调、PSP系统衔接及多主体资金管理方案。</p></div>
-      <div class="svc-card reveal"><span class="num">四</span><h3>贸易主体与跨境账户</h3><p>协助规划贸易主体、业务流程以及合同、订单、物流和资金单据之间的衔接，并对接香港账户、虚拟账户（VA）、多币种账户等专业资源。</p></div>
+      <div class="svc-card reveal"><span class="num">四</span><h3>贸易主体与跨境账户</h3><p>协助新设贸易主体，衔接业务流程及合同、订单、物流和资金单据，并对接香港账户、虚拟账户（VA）、多币种账户等专业资源。</p></div>
       <div class="svc-card reveal"><span class="num">五</span><h3>跨境投融资与并购对接</h3><p>协同专业机构提供跨境股权投融资、海外资产并购、内保外贷、国际信用证及贸易融资等方案咨询和资源对接。</p></div>
       <div class="svc-card reveal"><span class="num">六</span><h3>企业落地与财税配套</h3><p>包括境内外公司注册与变更、银行开户协助、代理记账与税务申报，以及签证、公证、产品认证等本地化配套服务。</p></div>
     </div>
@@ -428,9 +435,9 @@
 <section id="case" class="alt-bg">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Case · 属地真实场景</p>
-      <h2>一个正在发生的例子</h2>
-      <span class="ru">Реальный кейс из практики</span>
+      <p class="eyebrow">Case · 项目经验</p>
+      <h2>项目经验</h2>
+      <span class="ru">Опыт реализации проектов</span>
     </div>
     <div class="case-box reveal">
       <span class="scene">哈萨克斯坦连锁经营场景</span>
@@ -438,6 +445,13 @@
       <p>受国内头部收单聚合服务商利楚商服（利楚有限公司）委托，就其服务的知名连锁茶饮品牌在哈萨克斯坦共和国境内拓展相关的支付产品、账户开立、KYC/AML资料准备及资金归集、结算方案，开展前期咨询、沟通及商务对接。</p>
       <p class="insight">表面上，只是一家茶饮品牌到哈萨克斯坦开店；真正落到后台，涉及账户、收单、支付、KYC/AML、门店对账、资金归集和跨境结算的整套体系。</p>
       <p class="caveat">具体持牌合作机构及项目落地情况以实际进展为准。</p>
+    </div>
+    <div class="case-box reveal">
+      <span class="scene">西就跨境历史项目经验｜工业材料企业出海</span>
+      <h3>跨境投资架构</h3>
+      <p>某工业材料出口企业东南亚投资全案：架构设计、ODI备案、贸易优化及融资对接。以下案例图展示方案要点，项目进展以实际推进情况为准。</p>
+      <img class="case-img" src="assets/case-industrial.jpg" alt="工业材料企业东南亚投资全案方案要点图：架构设计、贸易优化、资金规划（西就跨境历史项目经验）" width="1800" height="852" loading="lazy">
+      <p class="caveat">点击图片可放大查看。</p>
     </div>
   </div>
 </section>
@@ -548,6 +562,20 @@
     });
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // 案例图点击放大（手机端可看清图内文字）
+  var lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-label', '案例图放大查看');
+  lb.innerHTML = '<img alt="案例方案要点图（放大）">';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('.case-img').forEach(function (img) {
+    img.addEventListener('click', function () { lbImg.src = this.src; lb.classList.add('open'); });
+  });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
 
   // 导航高亮
   var secs = ['about', 'shareholders', 'services', 'case', 'contact'];
