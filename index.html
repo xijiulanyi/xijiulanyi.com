@@ -331,7 +331,9 @@
   .contact-card.person-card .label { display: inline-block; width: 4em; margin-right: 4px; }
   .contact-card .person-qr { flex: 0 0 auto; margin: 0; text-align: center; }
   .contact-card .person-qr img { display: block; width: 120px; height: 120px; box-sizing: border-box; background: #fff; padding: 8px; border: 1px solid var(--line); border-radius: 8px; }
-  .contact-card .person-qr figcaption { color: var(--muted); font-size: .78rem; margin-top: 5px; }
+  .contact-card .person-qr figcaption { color: var(--muted); font-size: .78rem; margin-top: 5px; max-width: 150px; }
+  .contact-card .person-qr figcaption .ru { display: block; font-size: .68rem; line-height: 1.45; margin-top: 3px; }
+  .contact-card .person-qr a { display: block; }
   @media (max-width: 560px) {
     .contact-card.person-card { flex-direction: column; align-items: stretch; gap: 10px; }
     .contact-card .person-qr { align-self: center; }
@@ -628,6 +630,12 @@
           <p><span class="label">中国电话</span><a href="tel:+8618165782489">+86 181 6578 2489</a></p>
           <p><span class="label">邮箱</span><a href="mailto:elaine@a2yi.com">elaine@a2yi.com</a></p>
         </div>
+        <figure class="person-qr">
+          <a href="assets/qr-zeng.jpg" target="_blank" rel="noopener" aria-label="查看曾女士微信二维码原图">
+            <img src="assets/qr-zeng.jpg" alt="曾女士微信二维码" width="120" height="120" loading="lazy">
+          </a>
+          <figcaption>扫码添加微信，预约咨询<span class="ru" translate="no">Отсканируйте QR-код для связи в WeChat и записи на консультацию.</span></figcaption>
+        </figure>
       </div>
       <div class="contact-card reveal multi">
         <h3>邮件与地址</h3>
