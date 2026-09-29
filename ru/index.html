@@ -30,7 +30,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Xijiu Lanyi",
-  "alternateName": ["Xijiu Lanyi", "ТОО \"Xijiu Lanyi\""],
+  "alternateName": ["Xijiu Lanyi", "ТОО «Xijiu Lanyi»"],
   "url": "https://xijiulanyi.com/ru/",
   "description": "Консультации, технологическое подключение и сопровождение реализации для китайских компаний, работающих в Казахстане.",
   "address": {
@@ -276,6 +276,9 @@
   .channel-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); }
   .channel-card h4 { font-size: .98rem; color: var(--navy); margin: 0 0 8px; }
   .channel-card .channel-lead { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 600; color: var(--teal-deep); margin: 0 0 10px; }
+  .channel-flow { display: flex; align-items: center; gap: 14px; margin: 0 0 12px; flex-wrap: wrap; }
+  .channel-flow .flow-node { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 5px 18px; color: var(--navy); font-weight: 500; font-size: .92rem; }
+  .channel-flow .flow-arrow { color: var(--teal-deep); font-size: 1.3rem; font-weight: 700; line-height: 1; }
   .channel-card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: .88rem; }
   .channel-card li { margin: 3px 0; }
   .channel-card p { margin: 0 0 8px; font-size: .88rem; color: var(--muted); }
@@ -441,7 +444,7 @@
 <header class="hero" id="top">
   <img class="bird-bg" src="../assets/bird.png" alt="" width="1600" height="1600" aria-hidden="true" fetchpriority="high">
   <div class="wrap">
-    <p class="company">ТОО "Xijiu Lanyi" (Казахстан)<small>西就两仪有限公司</small></p>
+    <p class="company">ТОО «Xijiu Lanyi» (Казахстан)<small>西就两仪有限公司</small></p>
     <h1>Трансграничные расчёты и сопровождение инвестиций в Казахстане</h1>
     <p class="lead">Xijiu Lanyi работает в Казахстане и объединяет профессиональные ресурсы своих участников для решения задач китайских компаний, инвестирующих и ведущих бизнес в стране. Основное направление — трансграничные платежи и расчёты между предприятиями (B2B). Мы предоставляем консультации, обеспечиваем техническую интеграцию и реализацию решений.</p>
     <div class="cta">
@@ -461,7 +464,7 @@
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p>ТОО "Xijiu Lanyi" (далее — «Xijiu Lanyi») работает в Казахстане, обладает местными операционными и сервисными возможностями и объединяет профессиональные ресурсы своих участников в области трансграничных платёжных технологий, инвестиционных структур и трансграничного налогообложения.</p>
+        <p>ТОО «Xijiu Lanyi» (далее — «Xijiu Lanyi») работает в Казахстане, обладает местными операционными и сервисными возможностями и объединяет профессиональные ресурсы своих участников в области трансграничных платёжных технологий, инвестиционных структур и трансграничного налогообложения.</p>
         <p>С учётом реальной ситуации компании мы организуем регистрацию компании, сертификацию продукции, открытие и ведение счетов, местные платежи и трансграничные расчёты.</p>
         <p>От закупок франчайзи у головного офиса до платежей головного офиса поставщикам в материковом Китае за товары, а также расчётов за оборудование, сырьё и услуги — мы вокруг реального бизнеса связываем местные платежи, консолидацию средств и трансграничные расчёты.</p>
         <p>Клиент может начать с одной конкретной задачи. В рамках трансграничных расчётов мы координируем субъекты, договоры, логистику и налоговые договорённости, обеспечивая соответствующий требованиям, эффективный и удобный приём платежей и консолидацию средств.</p>
@@ -547,7 +550,7 @@
       <h2>Единая цепочка операций и расчётов</h2>
     </div>
     <div class="chain reveal">
-      <div class="chain-step"><b>Поступления в магазинах и консолидация средств</b><span>Транзакции магазинов, детали поступлений и единое управление средствами</span></div>
+      <div class="chain-step"><b>Поступления в магазинах и консолидация средств</b><span>Суммы поступлений, данные банка или платёжной организации плательщика и единое управление средствами</span></div>
       <div class="chain-step"><b>Расчёты франчайзи с головным офисом за закупки</b><span>Связка закупок и платежей, меньше ручной сверки</span></div>
       <div class="chain-step"><b>Трансграничные платежи головного офиса поставщикам в Китае</b><span>Связка местных платежей и трансграничных расчётов</span></div>
     </div>
@@ -581,6 +584,7 @@
     <div class="channel-grid">
       <div class="channel-card reveal" style="grid-column:1/-1;">
         <p class="channel-lead">Приём платежей непосредственно в тенге</p>
+        <div class="channel-flow"><span class="flow-node">Материковый Китай и Гонконг</span><span class="flow-arrow">⇄</span><span class="flow-node">Казахстан</span></div>
         <p>В рамках стратегического сотрудничества лицензированная компания Shumei Information в Гонконге и лицензированные организации в Казахстане создали двусторонний канал трансграничных платежей между предприятиями. Канал позволяет принимать платежи непосредственно в тенге с последующим перечислением средств на счета предприятий в материковом Китае или Гонконге, а также осуществлять платежи от предприятий материкового Китая и Гонконга предприятиям в Казахстане.</p>
         <p>Xijiu Lanyi координирует разработку решения, организацию работы со счетами и интеграцию систем с учётом бизнеса клиента, сокращая повторные операции, ручную сверку и многократный обмен документами.</p>
       </div>
@@ -675,7 +679,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Контакты</p>
-      <h2>ТОО "Xijiu Lanyi" (Казахстан)</h2>
+      <h2>ТОО «Xijiu Lanyi» (Казахстан)</h2>
     </div>
     <div class="contact-grid">
       <div class="contact-card person-card reveal">
@@ -722,7 +726,7 @@
       </div>
       <div class="contact-card reveal multi">
         <h3>Почта и адрес</h3>
-        <p class="role">ТОО "Xijiu Lanyi"</p>
+        <p class="role">ТОО «Xijiu Lanyi»</p>
         <p><span class="label">Эл. почта</span><a href="mailto:xijiuldf@gmail.com" class="email-strong">xijiuldf@gmail.com</a></p>
         <p><span class="label">Адрес офиса</span>г. Алматы, Медеуский район, ул. Гоголя, д. 39, офис 506, Казахстан</p>
         <div class="addr-tools">
@@ -748,7 +752,7 @@
 <footer>
   <div class="wrap">
     <img class="foot-logo" src="../assets/logo.png" alt="Логотип Xijiu Lanyi" width="448" height="150" loading="lazy">
-    <p>© ТОО "Xijiu Lanyi" (Казахстан) · Партнёр по комплаенсу трансграничных средств на всех этапах</p>
+    <p>© ТОО «Xijiu Lanyi» (Казахстан) · Партнёр по комплаенсу трансграничных средств на всех этапах</p>
     <p style="margin:4px 0 0; opacity:.75;">Бизнес-идентификационный номер Казахстана (BIN): 260840025690</p>
   </div>
 </footer>
