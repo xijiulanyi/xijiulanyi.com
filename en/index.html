@@ -208,6 +208,17 @@
   .share-card .card-logo-row { height: 56px; display: flex; align-items: center; margin: 0 0 12px; }
   .share-card .card-logo { width: 165px; height: auto; display: block; object-fit: contain; object-position: left center; }
   .share-card .card-logo.logo-lg { width: 180px; }
+  .share-card .org-name { color: var(--muted); font-size: .84rem; margin: 0 0 8px; }
+  .cred { margin-top: 10px; padding: 10px 13px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; }
+  .cred-label { display: block; font-size: .72rem; font-weight: 700; color: var(--blue); letter-spacing: .06em; margin-bottom: 4px; }
+  .cred-line { display: block; font-size: .85rem; color: var(--navy); line-height: 1.62; }
+  .deliver { margin-top: 14px; padding: 16px 20px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .deliver h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+  .deliver p { margin: 0 0 10px; font-size: .9rem; }
+  .deliver .deliver-key { font-weight: 600; color: var(--navy); border-left: 3px solid var(--teal); padding-left: 11px; }
+  .deliver .btn { margin-top: 4px; }
+  .lic-note { color: var(--muted); font-size: .84rem; line-height: 1.72; margin: 14px 0 0; }
+  @media (max-width: 767px) { .cred { padding: 9px 12px; } .deliver { padding: 14px 16px; } }
   .equity-note { margin: 0 0 18px; }
   .equity-note p { margin: 0 0 8px; font-size: .92rem; }
   .equity-note p:last-child { margin-bottom: 0; }
@@ -447,7 +458,7 @@
     </button>
     <div class="links" id="navLinks">
       <a href="#about">About us</a>
-      <a href="#shareholders">Our resources</a>
+      <a href="#shareholders">Shareholder Background and Professional Strength</a>
       <a href="#services">Services</a>
       <a href="#case">Cases</a>
       <a href="#contact">Contact us</a>
@@ -502,30 +513,64 @@
 <section id="shareholders" class="alt-bg">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Our resources</p>
-      <h2>Two professional lines converging in Kazakhstan</h2>
+      <p class="eyebrow">Shareholder Background and Professional Strength</p>
+      <h2>Domestic expertise working together, delivered on the ground in Kazakhstan</h2>
     </div>
     <div class="equity-note reveal">
-      <p>Xijiu Lanyi is jointly invested and established by Xijiu Cross-Border Hong Kong Limited and Lanyi Group Limited (Hong Kong).</p>
-      <p>Shareholders of Shenzhen Xijiu Cross-Border Information Technology Co., Ltd. (hereinafter referred to as “Xijiu Cross-Border”) include Shenzhen Shumei Information Technology Co., Ltd., Zhongcheng Lianhua Investment (Hainan) Co., Ltd., among others; Xijiu Cross-Border Hong Kong Limited is invested and established by Xijiu Cross-Border, and Lanyi Group Limited (Hong Kong) invested and established Shenzhen Qianhai Lanyi Cross-Border Investment Co., Ltd. (hereinafter referred to as “Lanyi Cross-Border”).</p>
-      <p>Relying on the above professional resources, Xijiu Lanyi takes the lead in Kazakhstan, providing consulting, technical integration and implementation services.</p>
+      <p>Xijiu Lanyi draws on the professional capabilities of its shareholder system in cross-border payments, outbound investment, taxation and digitalisation of border trade. Starting from each company’s actual business, we coordinate fund entry, local payments and receipts, cross-border settlement and arrangements for repatriating earnings.</p>
+      <p>For the entities, customs matters, accounts and taxation involved in compliant fund flows, domestic specialist teams work in coordination, while Xijiu Lanyi takes the lead on liaison and follows up implementation in Kazakhstan.</p>
     </div>
     <div class="share-grid">
       <div class="share-card reveal">
-        <div class="card-logo-row"><img class="card-logo logo-lg" src="../assets/logo-card.png" alt="Xijiu Cross-Border logo" width="615" height="144"></div>
-        <span class="tag">Xijiu Cross-Border · Cross-border funds</span>
-        <h3>Shenzhen Xijiu Cross-Border Information Technology Co., Ltd.</h3>
-        <p>Around companies’ needs for investment implementation, local fund consolidation and compliant repatriation of returns, Xijiu Cross-Border provides consulting, technical integration and implementation services.</p>
-        <p>Shenzhen Shumei Information Technology Co., Ltd. (hereinafter referred to as “Shumei Information”) has capabilities in cross-border payment technology, products and account systems. Its wholly-owned Hong Kong subsidiary holds a Hong Kong Money Service Operator (MSO) licence and provides Xijiu Cross-Border with relevant licensed service resources. Xijiu Cross-Border is responsible for product promotion, client liaison and implementation coordination.</p>
-        <p>Zhongcheng Lianhua Investment (Hainan) Co., Ltd. (hereinafter referred to as “Zhongcheng Lianhua”) has invested in Zhonghan Consulting Co., Ltd. (Kazakhstan). Backed by the professional resources of Beijing Zhonghan Tax Group (a national 5A-rated tax firm with more than 80 branches across China), Zhonghan Consulting focuses on investment and financing business locally. Relying on this resource, Xijiu Cross-Border provides clients with localized professional services such as cross-border tax and transaction arrangements.</p>
+        <span class="tag">Cross-border payments and account infrastructure</span>
+        <h3>Shumei Information</h3>
+        <p class="org-name">Shenzhen Shumei Information Technology Co., Ltd.</p>
+        <p>Provides capabilities in cross-border payment technology and account infrastructure, supporting the integration and implementation of China–Kazakhstan cross-border online settlement solutions based on real business needs.</p>
+        <div class="cred">
+          <span class="cred-label">Key licence</span>
+          <span class="cred-line">Its wholly-owned Hong Kong subsidiary holds an MSO (Money Service Operator) licence</span>
+        </div>
       </div>
       <div class="share-card reveal">
-        <div class="card-logo-row"><img class="card-logo" src="../assets/liangyi-logo.png" alt="Lanyi Cross-Border logo" width="1992" height="511"></div>
-        <span class="tag">Lanyi Cross-Border · Investment structuring</span>
-        <h3>Shenzhen Qianhai Lanyi Cross-Border Investment Co., Ltd.</h3>
-        <p>Lanyi Cross-Border is the core business arm of the Lanyi Cross-Border system. Its team dates back to 2015 and has long been engaged in outbound investment, foreign investment, cross-border structuring and project implementation services.</p>
-        <p>Relying on the Lanyi Cross-Border system’s Hong Kong Trust or Company Service Provider (TCSP) licence resources and its experience in cross-border investment, financing and M&A projects, we support companies with entity placement, investment path planning, related formalities and professional resource matching.</p>
+        <span class="tag">Outbound investment and financing structuring</span>
+        <h3>Lanyi Cross-Border</h3>
+        <p class="org-name">Shenzhen Qianhai Lanyi Cross-Border Investment Co., Ltd.</p>
+        <p>For outbound investment, follow-on financing and reinvestment needs, it designs entities and investment structures in line with each company’s business plan and coordinates the related fund arrangements.</p>
+        <div class="cred">
+          <span class="cred-label">Key licence</span>
+          <span class="cred-line">The relevant Hong Kong entity holds a TCSP (Trust or Company Service Provider) licence</span>
+        </div>
       </div>
+      <div class="share-card reveal">
+        <span class="tag">Local investment and financing, cross-border tax</span>
+        <h3>Zhongcheng Lianhua</h3>
+        <p class="org-name">Zhongcheng Lianhua Investment (Hainan) Co., Ltd.</p>
+        <p>It has invested in Zhonghan Consulting Co., Ltd. (Kazakhstan), which provides local investment and financing consulting and implementation coordination in Kazakhstan, supporting companies’ cross-border operations together with related tax and finance expertise.</p>
+        <div class="cred">
+          <span class="cred-label">Professional background</span>
+          <span class="cred-line">Beijing Zhonghan Tax Group</span>
+          <span class="cred-line">A national 5A-rated tax firm</span>
+          <span class="cred-line">80+ branches across China</span>
+        </div>
+      </div>
+      <div class="share-card reveal">
+        <span class="tag">Ports and trade digitalisation</span>
+        <h3>Xijiu Hengyi</h3>
+        <p class="org-name">Chengdu Xijiu Hengyi Enterprise Management Consulting Partnership (Limited Partnership)</p>
+        <p>Drawing on the relevant shareholder’s expertise in ports and trade digitalisation, it provides professional support for linking trade, logistics, documentation and regulatory information in cross-border business.</p>
+        <div class="cred">
+          <span class="cred-label">Expert background</span>
+          <span class="cred-line">Credentials of experts from the relevant shareholder:</span>
+          <span class="cred-line">Think-tank expert, China Ports and Harbours Association</span>
+          <span class="cred-line">Member of the Expert Committee on Trade Digitalisation, Ministry of Commerce</span>
+        </div>
+      </div>
+    </div>
+    <div class="deliver reveal">
+      <h4>Professional resources — and people on the ground</h4>
+      <p>Clients can start with one specific need. We assess solutions based on actual business, match account and settlement products, and coordinate customs declaration, cargo consolidation, transport, import clearance and certification as required.</p>
+      <p class="deliver-key">Domestic teams work in coordination while Xijiu Lanyi follows up on the ground in Kazakhstan, turning professional solutions into day-to-day business practice.</p>
+      <a class="btn btn-primary" href="#contact">Discuss your business needs</a>
     </div>
     <div class="share-extra reveal">
       <h4>Coordination of professional resources</h4>
@@ -543,6 +588,7 @@
     <div class="geo reveal">
       <span>Shenzhen</span><span>Hong Kong</span><span>Almaty</span>
     </div>
+    <p class="lic-note">The above presents the shareholder system and related professional resources; this is not a direct equity structure chart. The relevant licences are held by the respective entities; Xijiu Lanyi provides consulting, technical integration and implementation services and does not handle client funds.</p>
   </div>
 </section>
 
