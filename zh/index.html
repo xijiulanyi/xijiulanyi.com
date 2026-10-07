@@ -126,6 +126,7 @@
   nav .lang [aria-current="true"] { color: var(--navy); font-weight: 600; }
   nav .lang .lang-soon { color: var(--muted); font-size: .86rem; opacity: .5; cursor: default; }
   nav .lang .sep { color: var(--line); font-size: .8rem; }
+  section { scroll-margin-top: 76px; }
   .about-meta { color: var(--muted); font-size: .92rem; }
   #menuBtn { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
   #menuBtn svg { width: 22px; height: 22px; stroke: var(--navy); }
@@ -231,7 +232,7 @@
   @media (max-width: 767px) { .share-card .card-logo-row { height: 50px; margin: 0 0 12px; } .share-card .card-logo { width: 145px; } .share-card .card-logo.logo-lg { width: 160px; } }
 
   /* Stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
   .stat { text-align: center; padding: 10px 6px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
   .stat b { display: block; font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--teal-deep); line-height: 1.3; }
   .stat b.long { font-size: 1.02rem; line-height: 1.5; padding-top: 6px; }
@@ -441,6 +442,34 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* 通道图手机端纵向流程（r12） */
+  .mode-row .flow-or { color: var(--muted); font-size: .95rem; line-height: 1; }
+  @media (max-width: 720px) {
+    .mode-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .mode-row .flow-arrow { margin-left: 16px; }
+    .mode-row .flow-arrow:not(.flow-or) { transform: rotate(90deg); }
+  }
+
+  /* 服务04 「贸易业务如何安排」可展开说明（r13） */
+  .svc-card { display: flex; flex-direction: column; }
+  .svc-more { margin: 10px 0 0; border-top: 1px dashed var(--line); padding-top: 9px; }
+  .svc-card .svc-more-title { font-size: .72rem; font-weight: 700; color: var(--blue); letter-spacing: .06em; margin: 0 0 5px; }
+  .svc-more-box > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 8px; }
+  .svc-more-box > summary::-webkit-details-marker { display: none; }
+  .svc-more-box > summary::after { content: "＋"; margin-left: auto; color: var(--teal-deep); font-size: .9rem; line-height: 1; }
+  .svc-more-box[open] > summary::after { content: "－"; }
+  .svc-card .svc-key { color: var(--teal-deep); font-weight: 600; font-size: .89rem; }
+  .svc-more-body { margin-top: 8px; }
+  .svc-card .svc-more-body p { font-size: .85rem; line-height: 1.68; }
+  .svc-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 9px 0 0; }
+  .svc-steps span { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: .79rem; color: var(--navy); }
+  .svc-steps i { font-style: normal; font-weight: 700; color: var(--teal-deep); }
+  .svc-card .svc-steps-note { font-size: .77rem; color: var(--muted); margin: 7px 0 0; }
+  @media (max-width: 720px) {
+    .svc-steps { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .svc-steps i { transform: rotate(90deg); margin-left: 12px; }
+  }
 </style>
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
@@ -499,7 +528,7 @@
       <div class="reveal">
         <p>西就两仪有限公司（以下简称“西就两仪”）于2026年8月注册于哈萨克斯坦阿拉木图，围绕中资企业的投资与经营，提供跨境资金管理的方案咨询、技术对接及落地实施服务。</p>
         <p>由西就两仪在当地牵头，汇集股东在跨境支付技术、境外投资架构及跨境财税方面的资源与能力，从投资架构与融资安排，到本地收付款、资金归集，再到跨境线上结算及收益合规回国，结合企业实际情况统筹推进。</p>
-        <p>客户可以从一项具体需求开始。我们把相关的主体、账户、合同、物流及财税安排一并考虑，配套提供公司注册、代理记账及产品认证等属地服务，为企业经营与跨境结算提供支撑，减少人工处理、资料重复提交与反复沟通。</p>
+        <p>客户可以从一项具体需求开始。我们把相关的主体、关务、账户、合同、物流及财税安排一并考虑，配套提供公司注册、代理记账及产品认证等属地服务，为企业经营与跨境结算提供支撑，减少人工处理、资料重复提交与反复沟通。</p>
       </div>
       <div class="about-cards reveal">
         <div class="flow-card"><b>投资合规落地</b><span>投资进入与主体落地</span></div>
@@ -514,11 +543,10 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">股东背景与专业实力</p>
-      <h2>国内专业能力协同，哈萨克斯坦现场落地</h2>
+      <h2>国内专业团队协同，我们在哈萨克斯坦现场。</h2>
     </div>
     <div class="equity-note reveal">
-      <p>西就两仪依托股东体系在跨境支付、境外投资、财税及口岸贸易数字化方面的专业能力，从企业实际业务出发，统筹资金进入、本地收付、跨境结算及收益回国安排。</p>
-      <p>围绕资金合规所涉及的主体、关务、账户和税务，由国内专业团队协同，西就两仪在哈萨克斯坦牵头对接、跟进实施。</p>
+      <p>西就两仪依托股东体系在跨境支付、境外投资、跨境财税及口岸贸易数字化方面的专业能力，围绕企业实际业务，统筹资金进入、本地收付、跨境结算及收益回国安排。</p>
     </div>
     <div class="share-grid">
       <div class="share-card reveal">
@@ -560,35 +588,30 @@
         <p>结合相关股东的口岸与贸易数字化专业背景，为跨境业务中的贸易、物流、单证及监管信息衔接提供专业支持。</p>
         <div class="cred">
           <span class="cred-label">专家背景</span>
-          <span class="cred-line">相关股东专家履历：</span>
+          <span class="cred-line">相关股东专家履历</span>
           <span class="cred-line">中国口岸协会智库专家</span>
           <span class="cred-line">商务部贸易数字化专家委员会委员</span>
         </div>
       </div>
     </div>
     <div class="deliver reveal">
-      <h4>有专业资源，也有人在现场推进</h4>
-      <p>客户可以从一项具体需求开始。我们结合实际业务评估方案，匹配账户与结算产品，按需要协同报关、组货、运输、进口清关及认证等环节。</p>
-      <p class="deliver-key">国内团队协同，西就两仪在哈萨克斯坦现场跟进，让专业方案落实到企业的日常经营。</p>
+      <p>西就两仪在哈萨克斯坦牵头，根据企业实际业务统筹主体、关务、账户及财税安排，组织国内专业团队与相关机构协同实施。从方案设计、技术对接到当地跟进，把分散的专业环节落实到企业的实际经营。</p>
       <a class="btn btn-primary" href="#contact">沟通您的业务需求</a>
     </div>
     <div class="share-extra reveal">
-      <h4>专业资源协同</h4>
-      <p>两仪跨境已授权西就两仪作为相关业务的对外代表。由西就两仪在哈萨克斯坦牵头，结合股东专业资源，为企业提供整体方案与落地实施服务。</p>
-      <h4>跨境项目实践</h4>
-      <p>两仪跨境体系拥有境外放款、境外银行人民币融资、外商投资人民币资本金账户便利化及跨境账户资金运用等实践经验，以及涵盖跨境资金池、QDIE（合格境内投资企业）、QDLP（合格境内有限合伙人）、QFLP（合格境外有限合伙人）基金等跨境投资并购的架构服务能力，为客户提供从投资架构到执行落地的支持。</p>
+      <h4>两仪跨境实践与服务网络</h4>
+      <p>两仪跨境已授权西就两仪作为相关业务的对外代表。两仪跨境体系拥有境外放款、境外银行人民币融资、外商投资人民币资本金账户便利化及跨境账户资金运用等实践经验，以及涵盖跨境资金池、QDIE（合格境内投资企业）、QDLP（合格境内有限合伙人）、QFLP（合格境外有限合伙人）基金等跨境投资并购的架构服务能力，为客户提供从投资架构到执行落地的支持。</p>
     </div>
     <div class="stats reveal">
       <div class="stat"><b>2015</b><span>两仪团队成立年份</span></div>
       <div class="stat"><b>10+</b><span>境内设有子公司的城市</span></div>
       <div class="stat"><b>5</b><span>境外设有子公司的国家/地区</span></div>
-      <div class="stat"><b class="long">持牌资源：MSO（数美信息香港子公司）／TCSP（两仪相关香港主体）</b></div>
     </div>
     <p class="stats-note">数据为两仪跨境体系整体网络情况，不代表西就两仪独立设立或运营相应机构。</p>
     <div class="geo reveal">
       <span>深圳</span><span>香港</span><span>阿拉木图</span>
     </div>
-    <p class="lic-note">上述为股东体系及相关专业资源展示，非直接股权结构图。相关牌照由对应主体持有；西就两仪提供方案咨询、技术对接及落地实施服务，不经手客户资金。</p>
+    <p class="lic-note">上述为股东体系及相关专业资源展示，非直接股权结构图。相关牌照由对应主体持有。</p>
   </div>
 </section>
 
@@ -602,7 +625,17 @@
       <div class="svc-card reveal"><span class="num">01</span><h3>跨境投资架构与资金安排</h3><p>围绕企业投资进入中亚及多国经营，设计投资主体、持股关系与资金路径，为后续融资、境外再投资及收益回国做好安排。</p></div>
       <div class="svc-card reveal"><span class="num">02</span><h3>本地收付与资金归集</h3><p>提供本地收款及归集、企业间采购结算与对账方案，通过支付系统及ERP协同，减少人工处理，满足小额高频业务与集中管理需求。</p></div>
       <div class="svc-card reveal"><span class="num">03</span><h3>中哈跨境线上结算通道</h3><p>依托数美信息中哈跨境线上结算通道，支持坚戈直接付款、双向高效结算，通过线上办理与系统对接，减少人工处理及资料往返沟通。</p></div>
-      <div class="svc-card reveal"><span class="num">04</span><h3>贸易主体与跨境账户体系</h3><p>根据企业业务需要，提供贸易主体设立及跨境账户体系搭建服务，统筹出口货款收取、境外经营费用支付及结算回国。</p></div>
+      <div class="svc-card reveal"><span class="num">04</span><h3>贸易主体与跨境账户体系</h3><p>根据企业实际贸易，统筹贸易主体、适用报关路径与跨境账户体系，安排出口货款收取、境外经营费用支付及结算回国；按需要协同组货、运输、报关、进口清关及认证等环节。</p>
+        <div class="svc-more">
+          <details class="svc-more-box">
+            <summary><span class="svc-key">有货即有币，货币不分家。</span></summary>
+            <div class="svc-more-body">
+              <p>对贸易业务，合规结汇要从发货前安排。我们根据经营主体、商品及采购情况，确定适用的出口报关路径，匹配跨境账户与结算安排，并协同进口清关、运输、认证及相关财税环节，让货物、交易和资金相互对应。</p>
+              <div class="svc-steps"><span>确认业务与主体</span><i>→</i><span>确定报关路径</span><i>→</i><span>匹配账户与结算</span><i>→</i><span>协同实施</span></div>
+              <p class="svc-steps-note">各环节在发货前统筹设计，按实际业务安排推进。</p>
+            </div>
+          </details>
+        </div></div>
       <div class="svc-card reveal"><span class="num">05</span><h3>跨境融资与并购服务</h3><p>围绕企业融资、内保外贷及海外并购等需求，提供方案设计、专业资源对接与项目推进服务。</p></div>
       <div class="svc-card reveal"><span class="num">06</span><h3>哈国企服与代理记账</h3><p>提供哈萨克斯坦公司注册、变更、开户协助、代理记账、报税、签证及产品认证等服务。</p></div>
     </div>
@@ -617,7 +650,7 @@
     </div>
     <div class="chain reveal">
       <div class="chain-step"><b><i>01</i>投资架构与资金进入当地</b><span>设计投资主体、持股关系及资金路径，统筹投资资金进入当地。</span></div>
-      <div class="chain-step"><b><i>02</i>本地收款及资金归集</b><span>统筹经营收款、多账户及多主体资金归集，方便集中管理。</span></div>
+      <div class="chain-step"><b><i>02</i>本地收款及资金归集</b><span>统筹经营收款与集中对账，按资金所属主体及真实业务安排归集与结算，方便企业管理。</span></div>
       <div class="chain-step"><b><i>03</i>企业间采购与付款</b><span>衔接本地采购、供应链付款及小额高频结算需求。</span></div>
       <div class="chain-step"><b><i>04</i>跨境结算</b><span>根据业务需要配置账户与结算路径，安排境内外企业之间的收付款。</span></div>
       <div class="chain-step"><b><i>05</i>收益合规回国</b><span>结合实际业务及相关手续，安排资金结算至香港或中国内地，满足经营周转与收益回国需求。</span></div>
@@ -638,7 +671,7 @@
     </div>
     <div class="steps reveal">
       <div class="step"><i>01</i><b>了解需求</b><span>经营模式、资金链路及物流安排</span></div>
-      <div class="step"><i>02</i><b>评估现状</b><span>主体、合同、账务与资料情况</span></div>
+      <div class="step"><i>02</i><b>评估现状</b><span>主体、关务、账户及财税情况</span></div>
       <div class="step"><i>03</i><b>确定方案</b><span>可行路径、成本与实施步骤</span></div>
       <div class="step"><i>04</i><b>专业协同</b><span>股东及合作方专业资源衔接</span></div>
       <div class="step"><i>05</i><b>落地实施</b><span>由西就两仪在当地牵头推进</span></div>
@@ -658,17 +691,18 @@
         <p class="channel-lead">坚戈直接付款 · 双向高效结算</p>
         <p>支持哈国企业直接以坚戈付款，按业务需要结算至收款企业的香港或中国内地账户，同时支持中国内地及香港企业向哈萨克斯坦企业付款。通过线上资料办理与系统对接，减少重复录入、人工核对及资料往返沟通，满足贸易采购和小额高频结算需求。</p>
         <p><strong>西就两仪的作用：</strong>根据企业实际经营，统筹方案、账户安排、资料准备及系统对接，在哈萨克斯坦推进落地实施。</p>
-        <div class="mode-row"><span class="flow-node">哈萨克斯坦付款企业</span><span class="flow-cur">支付坚戈</span><span class="flow-arrow">→</span><span class="flow-mid">数美信息中哈跨境线上结算通道</span><span class="flow-arrow">→</span><span class="flow-node">收款企业香港账户</span><span class="flow-arrow">／</span><span class="flow-node">收款企业境内银行账户</span></div>
+        <div class="mode-row"><span class="flow-node">哈萨克斯坦付款企业</span><span class="flow-cur">支付坚戈</span><span class="flow-arrow">→</span><span class="flow-mid">数美信息中哈跨境线上结算通道</span><span class="flow-arrow">→</span><span class="flow-node">收款企业香港账户</span><span class="flow-or">／</span><span class="flow-node">收款企业境内银行账户</span></div>
         <div class="mode-row"><span class="flow-node">中国内地及香港付款企业</span><span class="flow-arrow">→</span><span class="flow-mid">数美信息中哈跨境线上结算通道</span><span class="flow-arrow">→</span><span class="flow-node">哈萨克斯坦收款企业账户</span></div>
         <p class="mode-note">收款企业香港账户资金可按适用业务安排用于境外经营或结算回国。</p>
         <p class="status">通道已开通 · 客户接入与系统对接按项目推进</p>
         <div class="lic-bar">
           <b>通道持牌服务支撑</b>
           <ul>
-            <li>哈萨克斯坦｜PSP支付服务</li>
-            <li>哈萨克斯坦｜MSP货币服务</li>
+            <li>哈萨克斯坦｜PSP支付服务牌照</li>
+            <li>哈萨克斯坦｜MSP货币服务牌照</li>
             <li>香港｜MSO金钱服务经营者牌照</li>
           </ul>
+          <p class="mode-note">相关服务由具备相应资质的持牌机构在获准范围内办理。</p>
         </div>
       </div>
     </div>
@@ -685,9 +719,9 @@
       <span class="scene">哈萨克斯坦连锁经营场景</span>
       <h3>连锁茶饮品牌在哈萨克斯坦的收单与结算服务</h3>
       <p><strong>客户遇到的问题：</strong>门店收款分散，交易数据与账务需要统一核对；加盟店采购频繁，付款与核对工作量大；总店与国内供应链之间的付款环节需要与本地收付衔接。</p>
-      <p><strong>我们开展的工作：</strong>依托利楚有限公司（CHINA LICHU LIMITED）的业务授权，西就两仪为利楚商服所服务的知名连锁茶饮品牌拓展哈萨克斯坦市场提供收单与结算服务，链路如下：</p>
+      <p><strong>我们开展的工作：</strong>依托利楚有限公司（CHINA LICHU LIMITED）的业务授权，西就两仪围绕其所服务的知名连锁茶饮品牌在哈萨克斯坦的本地收款、交易对账、资金归集及跨境采购付款，开展方案设计、系统对接与落地协同。</p>
       <div class="chain">
-        <div class="chain-step"><b>门店收款与资金归集</b><span>门店收款金额、付款机构等信息与资金统一管理</span></div>
+        <div class="chain-step"><b>门店收款与资金归集</b><span>收款信息集中对账，资金按所属主体及实际业务安排归集与结算。</span></div>
         <div class="chain-step"><b>加盟店向总店采购结算</b><span>采购与付款环节衔接，减少人工核对</span></div>
         <div class="chain-step"><b>总店向国内供应商跨境付款</b><span>衔接本地收付与跨境结算</span></div>
       </div>
@@ -776,7 +810,7 @@
           <h3>刘先生</h3>
           <p class="role">创始合伙人、总经理</p>
           <p><span class="label">中国电话</span><a href="tel:+8618109912345">+86 181 0991 2345</a></p>
-          <p><span class="label">哈国电话</span><a href="https://wa.me/77071874063" rel="noopener">+7 707 187 4063</a></p>
+          <p><span class="label">哈国电话</span><a href="tel:+77071874063">+7 707 187 4063</a></p>
         </div>
         <figure class="person-qr">
           <button type="button" class="qr-btn" aria-label="放大查看刘先生微信二维码">

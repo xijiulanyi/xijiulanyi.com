@@ -126,6 +126,7 @@
   nav .lang [aria-current="true"] { color: var(--navy); font-weight: 600; }
   nav .lang .lang-soon { color: var(--muted); font-size: .86rem; opacity: .5; cursor: default; }
   nav .lang .sep { color: var(--line); font-size: .8rem; }
+  section { scroll-margin-top: 76px; }
   .about-meta { color: var(--muted); font-size: .92rem; }
   #menuBtn { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
   #menuBtn svg { width: 22px; height: 22px; stroke: var(--navy); }
@@ -231,7 +232,7 @@
   @media (max-width: 767px) { .share-card .card-logo-row { height: 50px; margin: 0 0 12px; } .share-card .card-logo { width: 145px; } .share-card .card-logo.logo-lg { width: 160px; } }
 
   /* Stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
   .stat { text-align: center; padding: 10px 6px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
   .stat b { display: block; font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--teal-deep); line-height: 1.3; }
   .stat b.long { font-size: 1.02rem; line-height: 1.5; padding-top: 6px; }
@@ -441,6 +442,34 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* 通道图手机端纵向流程（r12） */
+  .mode-row .flow-or { color: var(--muted); font-size: .95rem; line-height: 1; }
+  @media (max-width: 720px) {
+    .mode-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .mode-row .flow-arrow { margin-left: 16px; }
+    .mode-row .flow-arrow:not(.flow-or) { transform: rotate(90deg); }
+  }
+
+  /* 服务04 「贸易业务如何安排」可展开说明（r13） */
+  .svc-card { display: flex; flex-direction: column; }
+  .svc-more { margin: 10px 0 0; border-top: 1px dashed var(--line); padding-top: 9px; }
+  .svc-card .svc-more-title { font-size: .72rem; font-weight: 700; color: var(--blue); letter-spacing: .06em; margin: 0 0 5px; }
+  .svc-more-box > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 8px; }
+  .svc-more-box > summary::-webkit-details-marker { display: none; }
+  .svc-more-box > summary::after { content: "＋"; margin-left: auto; color: var(--teal-deep); font-size: .9rem; line-height: 1; }
+  .svc-more-box[open] > summary::after { content: "－"; }
+  .svc-card .svc-key { color: var(--teal-deep); font-weight: 600; font-size: .89rem; }
+  .svc-more-body { margin-top: 8px; }
+  .svc-card .svc-more-body p { font-size: .85rem; line-height: 1.68; }
+  .svc-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 9px 0 0; }
+  .svc-steps span { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: .79rem; color: var(--navy); }
+  .svc-steps i { font-style: normal; font-weight: 700; color: var(--teal-deep); }
+  .svc-card .svc-steps-note { font-size: .77rem; color: var(--muted); margin: 7px 0 0; }
+  @media (max-width: 720px) {
+    .svc-steps { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .svc-steps i { transform: rotate(90deg); margin-left: 12px; }
+  }
 </style>
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
@@ -499,7 +528,7 @@
       <div class="reveal">
         <p>Xijiu Lanyi Limited (hereinafter “Xijiu Lanyi”) was registered in Almaty, Kazakhstan in August 2026. Focusing on the investment and operations of Chinese enterprises, we provide consulting, technical integration and implementation services for cross-border cash management.</p>
         <p>Led locally by Xijiu Lanyi, we bring together the shareholders’ resources and capabilities in cross-border payment technology, outbound investment structuring and cross-border taxation — from investment structuring and financing arrangements, to local payments and receipts and fund consolidation, and further to cross-border online settlement and compliant repatriation of proceeds — coordinating the work in line with each company’s actual situation.</p>
-        <p>Clients can start with one specific need. We take the related entities, accounts, contracts, logistics and tax arrangements into account together, and provide supporting local services such as company incorporation, bookkeeping and product certification, underpinning business operations and cross-border settlement while reducing manual handling, duplicate submissions and repeated communication.</p>
+        <p>Clients can start with one specific need. We take the related entities, customs, accounts, contracts, logistics and tax arrangements into account together, and provide supporting local services such as company incorporation, bookkeeping and product certification, underpinning business operations and cross-border settlement while reducing manual handling, duplicate submissions and repeated communication.</p>
       </div>
       <div class="about-cards reveal">
         <div class="flow-card"><b>Compliant investment entry</b><span>Investment entry and entity establishment</span></div>
@@ -514,11 +543,10 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Shareholder Background and Professional Strength</p>
-      <h2>Domestic expertise working together, delivered on the ground in Kazakhstan</h2>
+      <h2>Professional teams in China. On-the-ground delivery in Kazakhstan.</h2>
     </div>
     <div class="equity-note reveal">
-      <p>Xijiu Lanyi draws on the professional capabilities of its shareholder system in cross-border payments, outbound investment, taxation and digitalisation of border trade. Starting from each company’s actual business, we coordinate fund entry, local payments and receipts, cross-border settlement and arrangements for repatriating earnings.</p>
-      <p>For the entities, customs matters, accounts and taxation involved in compliant fund flows, domestic specialist teams work in coordination, while Xijiu Lanyi takes the lead on liaison and follows up implementation in Kazakhstan.</p>
+      <p>Xijiu Lanyi draws on the professional capabilities of its shareholder system in cross-border payments, outbound investment, cross-border taxation and ports-of-entry and trade digitalisation and, around each company’s actual business, coordinates fund entry, local payments and receipts, cross-border settlement and arrangements for repatriating earnings.</p>
     </div>
     <div class="share-grid">
       <div class="share-card reveal">
@@ -554,41 +582,36 @@
         </div>
       </div>
       <div class="share-card reveal">
-        <span class="tag">Ports and trade digitalisation</span>
+        <span class="tag">Ports-of-Entry and Trade Digitalisation</span>
         <h3>Xijiu Hengyi</h3>
         <p class="org-name">Chengdu Xijiu Hengyi Enterprise Management Consulting Partnership (Limited Partnership)</p>
-        <p>Drawing on the relevant shareholder’s expertise in ports and trade digitalisation, it provides professional support for linking trade, logistics, documentation and regulatory information in cross-border business.</p>
+        <p>Drawing on the relevant shareholder’s expertise in ports-of-entry and trade digitalisation, it provides professional support for linking trade, logistics, documentation and regulatory information in cross-border business.</p>
         <div class="cred">
           <span class="cred-label">Expert background</span>
-          <span class="cred-line">Credentials of experts from the relevant shareholder:</span>
-          <span class="cred-line">Think-tank expert, China Ports and Harbours Association</span>
+          <span class="cred-line">Credentials of experts from the relevant shareholder</span>
+          <span class="cred-line">Think-tank expert, China Association of Port-of-Entry (CAOP)</span>
           <span class="cred-line">Member of the Expert Committee on Trade Digitalisation, Ministry of Commerce</span>
         </div>
       </div>
     </div>
     <div class="deliver reveal">
-      <h4>Professional resources — and people on the ground</h4>
-      <p>Clients can start with one specific need. We assess solutions based on actual business, match account and settlement products, and coordinate customs declaration, cargo consolidation, transport, import clearance and certification as required.</p>
-      <p class="deliver-key">Domestic teams work in coordination while Xijiu Lanyi follows up on the ground in Kazakhstan, turning professional solutions into day-to-day business practice.</p>
+      <p>Xijiu Lanyi leads coordination in Kazakhstan. Based on each company’s actual business, we align entity, customs, account, tax and accounting arrangements and coordinate implementation with professional teams in China and relevant institutions. From solution design and technical integration to local follow-up, we bring these specialist tasks together in day-to-day business operations.</p>
       <a class="btn btn-primary" href="#contact">Discuss your business needs</a>
     </div>
     <div class="share-extra reveal">
-      <h4>Coordination of professional resources</h4>
-      <p>Lanyi Cross-Border has authorized Xijiu Lanyi to act as its external representative for related business. Led by Xijiu Lanyi in Kazakhstan and drawing on shareholders’ professional resources, we provide companies with integrated solutions and implementation services.</p>
-      <h4>Cross-border project experience</h4>
-      <p>The Lanyi Cross-Border system has practical experience in offshore lending, RMB financing from overseas banks, facilitation of RMB capital accounts for foreign-invested enterprises and use of cross-border accounts, as well as structuring capabilities covering cross-border cash pooling, QDIE (qualified domestic investment enterprise), QDLP (qualified domestic limited partner) and QFLP (qualified foreign limited partner) funds — supporting clients from investment structuring to execution.</p>
+      <h4>Lanyi Cross-border: Experience and Service Network</h4>
+      <p>Lanyi Cross-Border has authorised Xijiu Lanyi to act as its external representative for the related business. The Lanyi Cross-Border system has practical experience in offshore lending, RMB financing from overseas banks, facilitation of RMB capital accounts for foreign-invested enterprises and use of cross-border accounts, as well as structuring capabilities covering cross-border cash pooling, QDIE (qualified domestic investment enterprise), QDLP (qualified domestic limited partner) and QFLP (qualified foreign limited partner) funds — supporting clients from investment structuring to execution.</p>
     </div>
     <div class="stats reveal">
       <div class="stat"><b>2015</b><span>Year the Lanyi team was founded</span></div>
       <div class="stat"><b>10+</b><span>Cities with domestic subsidiaries</span></div>
       <div class="stat"><b>5</b><span>Countries/regions with overseas subsidiaries</span></div>
-      <div class="stat"><b class="long">Licensed resources: MSO (Shumei Information’s Hong Kong subsidiary) / TCSP (Lanyi-related Hong Kong entity)</b></div>
     </div>
     <p class="stats-note">The figures reflect the overall network of the Lanyi Cross-Border system and do not represent institutions independently established or operated by Xijiu Lanyi.</p>
     <div class="geo reveal">
       <span>Shenzhen</span><span>Hong Kong</span><span>Almaty</span>
     </div>
-    <p class="lic-note">The above presents the shareholder system and related professional resources; this is not a direct equity structure chart. The relevant licences are held by the respective entities; Xijiu Lanyi provides consulting, technical integration and implementation services and does not handle client funds.</p>
+    <p class="lic-note">The above presents the shareholder system and related professional resources; this is not a direct equity structure chart. The relevant licences are held by the respective entities.</p>
   </div>
 </section>
 
@@ -602,7 +625,17 @@
       <div class="svc-card reveal"><span class="num">01</span><h3>Cross-Border Investment Structuring and Funding Arrangements</h3><p>For businesses investing into Central Asia and operating across multiple countries, we design investment entities, ownership structures and funding paths, preparing for subsequent financing, overseas reinvestment and repatriation of earnings.</p></div>
       <div class="svc-card reveal"><span class="num">02</span><h3>Local Collections, Payments and Funds Consolidation</h3><p>We provide local collection and consolidation, intercompany procurement settlement and reconciliation solutions, coordinated through payment systems and ERP to reduce manual handling and meet small-amount, high-frequency and centralized management needs.</p></div>
       <div class="svc-card reveal"><span class="num">03</span><h3>China–Kazakhstan Online Cross-Border Settlement Channel</h3><p>Based on the Shumei Information China–Kazakhstan Online Cross-Border Settlement Channel, we support direct payments in tenge (KZT) and efficient two-way settlement. Online processing and system integration reduce manual handling and document back-and-forth.</p></div>
-      <div class="svc-card reveal"><span class="num">04</span><h3>Trading Entities and Cross-Border Account Solutions</h3><p>According to each company’s business needs, we help establish trading entities and build cross-border account systems, coordinating export payment collection, overseas operating expense payments and settlement back to China.</p></div>
+      <div class="svc-card reveal"><span class="num">04</span><h3>Trading Entities and Cross-Border Account System</h3><p>Based on the company’s actual trade activities, we coordinate the trading entity, the applicable export customs procedure and cross-border account arrangements, covering receipt of export proceeds, payment of overseas operating expenses and settlement back to China. Where needed, we also coordinate cargo consolidation, transport, export customs clearance, import customs clearance and certification.</p>
+        <div class="svc-more">
+          <details class="svc-more-box">
+            <summary><span class="svc-key">Goods and payments belong to the same trade transaction.</span></summary>
+            <div class="svc-more-body">
+              <p>For trade transactions, compliant foreign-exchange settlement should be planned before shipment. Based on the trading entities, goods and procurement arrangements, we identify the applicable export customs procedure, align account and settlement arrangements, and coordinate import clearance, transport, certification and relevant tax and accounting matters so that goods, transactions and payments correspond.</p>
+              <div class="svc-steps"><span>Confirm the business and entities</span><i>→</i><span>Determine the customs procedure</span><i>→</i><span>Align accounts and settlement</span><i>→</i><span>Coordinate implementation</span></div>
+              <p class="svc-steps-note">Plan all relevant stages before shipment and implement them according to the actual transaction.</p>
+            </div>
+          </details>
+        </div></div>
       <div class="svc-card reveal"><span class="num">05</span><h3>Cross-Border Financing and M&amp;A Services</h3><p>Around business financing, domestic-guarantee offshore loans and overseas M&amp;A needs, we provide solution design, professional resource matching and project advancement services.</p></div>
       <div class="svc-card reveal"><span class="num">06</span><h3>Corporate and Bookkeeping Services in Kazakhstan</h3><p>We provide Kazakhstan company registration, amendments, account opening assistance, bookkeeping, tax filing, visa and product certification services.</p></div>
     </div>
@@ -617,7 +650,7 @@
     </div>
     <div class="chain reveal">
       <div class="chain-step"><b><i>01</i>Investment structuring and funds entry</b><span>Design investment entities, ownership relations and funding routes, coordinating the entry of investment funds into Kazakhstan.</span></div>
-      <div class="chain-step"><b><i>02</i>Local collections and funds consolidation</b><span>Coordinate operating collections and consolidation across accounts and entities for centralized management.</span></div>
+      <div class="chain-step"><b><i>02</i>Local collections and funds consolidation</b><span>Coordinate operating collections and centralised reconciliation, arranging consolidation and settlement according to the entity that owns the funds and the actual business, making it easier for companies to manage.</span></div>
       <div class="chain-step"><b><i>03</i>Inter-company procurement and payments</b><span>Connect local procurement, supply-chain payments and small-amount, high-frequency settlement needs.</span></div>
       <div class="chain-step"><b><i>04</i>Cross-border settlement</b><span>Configure accounts and settlement routes as needed, arranging payments between domestic and overseas entities.</span></div>
       <div class="chain-step"><b><i>05</i>Compliant repatriation of earnings</b><span>Based on actual business and required procedures, arrange settlement of funds to Hong Kong or mainland China, supporting operating turnover and repatriation of earnings.</span></div>
@@ -638,7 +671,7 @@
     </div>
     <div class="steps reveal">
       <div class="step"><i>01</i><b>Understanding needs</b><span>Business model, capital flows and logistics</span></div>
-      <div class="step"><i>02</i><b>Assessing the status quo</b><span>Entities, contracts, accounting records and documents</span></div>
+      <div class="step"><i>02</i><b>Assessing the status quo</b><span>Entities, customs, accounts and tax position</span></div>
       <div class="step"><i>03</i><b>Defining the solution</b><span>Feasible paths, costs and implementation steps</span></div>
       <div class="step"><i>04</i><b>Professional coordination</b><span>Connecting shareholders’ and partners’ professional resources</span></div>
       <div class="step"><i>05</i><b>Implementation</b><span>Led locally by Xijiu Lanyi</span></div>
@@ -658,17 +691,18 @@
         <p class="channel-lead">Direct Payments in KZT · Efficient Two-Way Settlement</p>
         <p>Kazakhstani businesses can pay directly in tenge, with funds settled as needed to the receiving company’s Hong Kong or mainland China accounts. Businesses in mainland China and Hong Kong can also make payments to businesses in Kazakhstan. Online document processing and system integration reduce repeated data entry, manual reconciliation and document back-and-forth, meeting trade procurement and small-amount, high-frequency settlement needs.</p>
         <p><strong>The role of Xijiu Lanyi:</strong> based on each client’s actual operations, Xijiu Lanyi coordinates the solution, account arrangements, document preparation and system integration, and drives implementation on the ground in Kazakhstan.</p>
-        <div class="mode-row"><span class="flow-node">Kazakhstani payer</span><span class="flow-cur">Pays in KZT</span><span class="flow-arrow">→</span><span class="flow-mid">Shumei Information China–Kazakhstan Online Cross-Border Settlement Channel</span><span class="flow-arrow">→</span><span class="flow-node">Receiver’s Hong Kong account</span><span class="flow-arrow">/</span><span class="flow-node">Receiver’s mainland China bank account</span></div>
+        <div class="mode-row"><span class="flow-node">Kazakhstani payer</span><span class="flow-cur">Pays in KZT</span><span class="flow-arrow">→</span><span class="flow-mid">Shumei Information China–Kazakhstan Online Cross-Border Settlement Channel</span><span class="flow-arrow">→</span><span class="flow-node">Receiver’s Hong Kong account</span><span class="flow-or">/</span><span class="flow-node">Receiver’s mainland China bank account</span></div>
         <div class="mode-row"><span class="flow-node">Payers in mainland China and Hong Kong</span><span class="flow-arrow">→</span><span class="flow-mid">Shumei Information China–Kazakhstan Online Cross-Border Settlement Channel</span><span class="flow-arrow">→</span><span class="flow-node">Kazakhstani receiving company’s account</span></div>
         <p class="mode-note">Funds in the receiving company’s Hong Kong account may, for applicable businesses, be used for overseas operations or settled back to China.</p>
         <p class="status">Channel in operation · client onboarding and system integration proceed project by project</p>
         <div class="lic-bar">
           <b>Licensed service support for the channel</b>
           <ul>
-            <li>Kazakhstan | PSP payment services</li>
-            <li>Kazakhstan | MSP money services</li>
-            <li>Hong Kong | MSO Money Service Operator licence</li>
+            <li>Kazakhstan | Payment Service Provider (PSP) licence</li>
+            <li>Kazakhstan | Money Service Provider (MSP) licence</li>
+            <li>Hong Kong | Money Service Operator (MSO) licence</li>
           </ul>
+          <p class="mode-note">Related services are provided by duly licensed institutions within the scope of their approved business.</p>
         </div>
       </div>
     </div>
@@ -685,9 +719,9 @@
       <span class="scene">Chain operations in Kazakhstan</span>
       <h3>Acquiring and settlement services for a chain tea beverage brand in Kazakhstan</h3>
       <p><strong>The client’s challenges:</strong> Store collections were scattered and transaction data and books needed unified checking; franchisees purchased frequently, with heavy payment and checking workload; payments between HQ and supply chains in mainland China needed to connect with local collections.</p>
-      <p><strong>Our work:</strong> Under the business authorization of CHINA LICHU LIMITED, Xijiu Lanyi supports a well-known tea beverage chain served by Lichu Business Services in expanding into the Kazakhstan market with acquiring and settlement services, along the flow below:</p>
+      <p><strong>Our work:</strong> Under the business authorization of CHINA LICHU LIMITED, Xijiu Lanyi carries out solution design, system integration and on-the-ground coordination for the local collections, transaction reconciliation, fund consolidation and cross-border procurement payments of a well-known tea beverage chain it serves in Kazakhstan.</p>
       <div class="chain">
-        <div class="chain-step"><b>Store collections and fund consolidation</b><span>Store collection amounts, information on the payer’s bank or payment institution and unified fund management</span></div>
+        <div class="chain-step"><b>Store collections and fund consolidation</b><span>Collection information is reconciled centrally, and funds are consolidated and settled according to the entity that owns them and the actual business.</span></div>
         <div class="chain-step"><b>Franchise procurement settlement with HQ</b><span>Connecting procurement and payment, reducing manual checking</span></div>
         <div class="chain-step"><b>Cross-border payments from HQ to suppliers in mainland China</b><span>Connecting local payments with cross-border settlement</span></div>
       </div>
@@ -776,13 +810,13 @@
           <h3>Mr. Liu</h3>
           <p class="role">Founding Partner &amp; General Manager</p>
           <p><span class="label">China</span><a href="tel:+8618109912345">+86 181 0991 2345</a></p>
-          <p><span class="label">Kazakhstan</span><a href="https://wa.me/77071874063" rel="noopener">+7 707 187 4063</a></p>
+          <p><span class="label">Kazakhstan</span><a href="tel:+77071874063">+7 707 187 4063</a></p>
         </div>
         <figure class="person-qr">
-          <button type="button" class="qr-btn" aria-label="Zoom in Mr. Liu’s QR code">
-            <img src="../assets/qr-liu.png" alt="Mr. Liu’s QR code" width="120" height="120" loading="lazy">
+          <button type="button" class="qr-btn" aria-label="Zoom in Mr. Liu’s WeChat QR code">
+            <img src="../assets/qr-liu.png" alt="Mr. Liu’s WeChat QR code" width="120" height="120" loading="lazy">
           </button>
-          <figcaption>Scan to connect</figcaption>
+          <figcaption>Scan with WeChat</figcaption>
         </figure>
       </div>
       <div class="contact-card person-card reveal">
@@ -793,10 +827,10 @@
           <p><span class="label">Kazakhstan</span><a href="tel:+77070563323">+7 707 056 3323</a></p>
         </div>
         <figure class="person-qr">
-          <button type="button" class="qr-btn" aria-label="Zoom in Mr. Qin’s QR code">
-            <img src="../assets/qr-qin.png" alt="Mr. Qin’s QR code" width="120" height="120" loading="lazy">
+          <button type="button" class="qr-btn" aria-label="Zoom in Mr. Qin’s WeChat QR code">
+            <img src="../assets/qr-qin.png" alt="Mr. Qin’s WeChat QR code" width="120" height="120" loading="lazy">
           </button>
-          <figcaption>Scan to connect</figcaption>
+          <figcaption>Scan with WeChat</figcaption>
         </figure>
       </div>
       <div class="contact-card person-card reveal" id="contact-zeng">
@@ -807,10 +841,10 @@
           <p class="phone-spacer" aria-hidden="true">&nbsp;</p>
         </div>
         <figure class="person-qr">
-          <button type="button" class="qr-btn" aria-label="Zoom in Ms. Zeng’s QR code">
-            <img src="../assets/qr-zeng.png" alt="Ms. Zeng’s QR code" width="120" height="120" loading="lazy">
+          <button type="button" class="qr-btn" aria-label="Zoom in Ms. Zeng’s WeChat QR code">
+            <img src="../assets/qr-zeng.png" alt="Ms. Zeng’s WeChat QR code" width="120" height="120" loading="lazy">
           </button>
-          <figcaption>Scan to connect</figcaption>
+          <figcaption>Scan with WeChat</figcaption>
         </figure>
       </div>
       <div class="contact-card reveal multi">
